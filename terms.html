@@ -3,110 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Términos y Condiciones — TarotApp</title>
+  <title>Terms & Conditions / Términos y Condiciones — TarotApp</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0a0a0f;
-      color: #e0ddd8;
-      line-height: 1.7;
-      padding: 40px 20px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0ddd8; line-height: 1.7; padding: 40px 20px; }
     .container { max-width: 720px; margin: 0 auto; }
-    .header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #c9a84c30; }
+    .header { text-align: center; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #c9a84c30; }
     .logo { font-size: 32px; margin-bottom: 12px; }
     h1 { font-size: 26px; color: #c9a84c; letter-spacing: 1px; margin-bottom: 8px; }
     .subtitle { font-size: 14px; color: #9b9399; }
     .updated { font-size: 13px; color: #9b9399; margin-top: 8px; }
+    .lang-toggle { display: flex; justify-content: center; gap: 8px; margin-bottom: 28px; }
+    .lang-btn { background: transparent; border: 1px solid #c9a84c40; color: #9b9399; padding: 6px 18px; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+    .lang-btn.active { background: #c9a84c20; border-color: #c9a84c; color: #c9a84c; }
+    .nav { text-align: center; margin-bottom: 32px; }
+    .nav a { color: #c9a84c; text-decoration: none; font-size: 14px; margin: 0 12px; }
+    .nav a:hover { text-decoration: underline; }
     .section { margin-bottom: 36px; }
     h2 { font-size: 16px; color: #c9a84c; letter-spacing: 0.5px; margin-bottom: 12px; text-transform: uppercase; }
     p { font-size: 15px; color: #ccc8c3; white-space: pre-line; }
     .footer { text-align: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid #c9a84c20; font-size: 13px; color: #9b9399; }
     .footer a { color: #c9a84c; text-decoration: none; }
-    .nav { text-align: center; margin-bottom: 32px; }
-    .nav a { color: #c9a84c; text-decoration: none; font-size: 14px; margin: 0 12px; }
-    .nav a:hover { text-decoration: underline; }
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <div class="logo">✦</div>
-      <h1>Términos y Condiciones</h1>
+      <h1 id="page-title">Términos y Condiciones</h1>
       <p class="subtitle">TarotApp — Qore Studio</p>
-      <p class="updated">Última actualización: Abril 2026</p>
+      <p class="updated" id="page-updated">Última actualización: Abril 2026</p>
+    </div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">Español</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
     </div>
 
     <div class="nav">
-      <a href="privacy-policy.html">Privacidad</a>
-      <a href="terms.html">Términos y Condiciones</a>
+      <a href="privacy-policy.html" id="nav-privacy">Privacidad</a>
+      <a href="terms.html" id="nav-terms">Términos y Condiciones</a>
     </div>
 
-    <div class="section">
-      <h2>1. Aceptación de términos</h2>
-      <p>Al descargar, instalar o usar TarotApp, aceptás estos Términos y Condiciones en su totalidad. Si no estás de acuerdo con algún término, no uses la aplicación.</p>
-    </div>
+    <!-- ESPAÑOL -->
+    <div data-lang="es" class="visible">
+      <div class="section"><h2>1. Aceptación de términos</h2><p>Al descargar, instalar o usar TarotApp, aceptás estos Términos y Condiciones en su totalidad. Si no estás de acuerdo con algún término, no uses la aplicación.</p></div>
+      <div class="section"><h2>2. Descripción del servicio</h2><p>TarotApp es una aplicación de entretenimiento y bienestar espiritual que ofrece lecturas de tarot, horóscopo, compatibilidad astrológica y contenido relacionado con astrología.
 
-    <div class="section">
-      <h2>2. Descripción del servicio</h2>
-      <p>TarotApp es una aplicación de entretenimiento y bienestar espiritual que ofrece lecturas de tarot, horóscopo, compatibilidad astrológica y contenido relacionado con astrología.
-
-El contenido de TarotApp tiene fines exclusivamente de entretenimiento. Las lecturas de tarot y predicciones astrológicas NO deben usarse como sustituto de asesoramiento médico, legal, financiero o psicológico profesional.</p>
-    </div>
-
-    <div class="section">
-      <h2>3. Suscripciones y pagos</h2>
-      <p>TarotApp ofrece suscripciones de pago para acceder a funciones premium:
+El contenido de TarotApp tiene fines exclusivamente de entretenimiento. Las lecturas de tarot y predicciones astrológicas NO deben usarse como sustituto de asesoramiento médico, legal, financiero o psicológico profesional.</p></div>
+      <div class="section"><h2>3. Suscripciones y pagos</h2><p>TarotApp ofrece suscripciones de pago para acceder a funciones premium:
 
 • Las suscripciones se cobran a tu cuenta de App Store o Google Play
 • Las suscripciones se renuevan automáticamente a menos que las canceles al menos 24 horas antes del final del período actual
 • Podés gestionar y cancelar tu suscripción desde la configuración de tu cuenta en App Store o Google Play
-• No se ofrecen reembolsos por períodos parciales de suscripción</p>
-    </div>
-
-    <div class="section">
-      <h2>4. Uso aceptable</h2>
-      <p>Al usar TarotApp aceptás:
+• No se ofrecen reembolsos por períodos parciales de suscripción</p></div>
+      <div class="section"><h2>4. Uso aceptable</h2><p>Al usar TarotApp aceptás:
 
 • No usar la app para fines ilegales
 • No intentar acceder, modificar o interferir con los sistemas de la app
 • No reproducir, distribuir ni vender el contenido de la app sin permiso
-• No usar la app de manera que pueda dañar, deshabilitar o sobrecargar nuestros servicios</p>
-    </div>
+• No usar la app de manera que pueda dañar, deshabilitar o sobrecargar nuestros servicios</p></div>
+      <div class="section"><h2>5. Propiedad intelectual</h2><p>Todo el contenido de TarotApp, incluyendo diseños, textos, imágenes, iconos y software, es propiedad de Qore Studio o sus licenciantes y está protegido por leyes de derechos de autor.
 
-    <div class="section">
-      <h2>5. Propiedad intelectual</h2>
-      <p>Todo el contenido de TarotApp, incluyendo diseños, textos, imágenes, iconos y software, es propiedad de Qore Studio o sus licenciantes y está protegido por leyes de derechos de autor.
-
-Se te otorga una licencia limitada, no exclusiva y no transferible para usar la app con fines personales.</p>
-    </div>
-
-    <div class="section">
-      <h2>6. Limitación de responsabilidad</h2>
-      <p>TarotApp se proporciona "tal cual", sin garantías de ningún tipo. No nos responsabilizamos por:
+Se te otorga una licencia limitada, no exclusiva y no transferible para usar la app con fines personales.</p></div>
+      <div class="section"><h2>6. Limitación de responsabilidad</h2><p>TarotApp se proporciona "tal cual", sin garantías de ningún tipo. No nos responsabilizamos por:
 
 • Decisiones tomadas basadas en lecturas de tarot u horóscopo
 • Pérdida de datos del dispositivo
 • Interrupciones del servicio
 • Daños indirectos o consecuentes
 
-Nuestra responsabilidad máxima se limita al monto pagado por tu suscripción en los últimos 12 meses.</p>
+Nuestra responsabilidad máxima se limita al monto pagado por tu suscripción en los últimos 12 meses.</p></div>
+      <div class="section"><h2>7. Modificaciones</h2><p>Nos reservamos el derecho de modificar o discontinuar la app en cualquier momento. También podemos actualizar estos Términos y Condiciones. El uso continuado de la app constituye aceptación de los términos actualizados.</p></div>
+      <div class="section"><h2>Contacto</h2><p>Si tenés preguntas sobre estos términos, escribinos a: <a href="mailto:qorestudiosupport@gmail.com" style="color:#c9a84c">qorestudiosupport@gmail.com</a></p></div>
     </div>
 
-    <div class="section">
-      <h2>7. Modificaciones</h2>
-      <p>Nos reservamos el derecho de modificar o discontinuar la app en cualquier momento. También podemos actualizar estos Términos y Condiciones. El uso continuado de la app constituye aceptación de los términos actualizados.</p>
-    </div>
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <div class="section"><h2>1. Acceptance of Terms</h2><p>By downloading, installing, or using TarotApp, you agree to these Terms and Conditions in full. If you disagree with any part of these terms, do not use the application.</p></div>
+      <div class="section"><h2>2. Description of Service</h2><p>TarotApp is an entertainment and spiritual wellness application that offers tarot readings, horoscopes, astrological compatibility, and related content.
 
-    <div class="section">
-      <h2>Contacto</h2>
-      <p>Si tenés preguntas sobre estos términos, escribinos a: <a href="mailto:qorestudiosupport@gmail.com" style="color:#c9a84c">qorestudiosupport@gmail.com</a></p>
+The content of TarotApp is for entertainment purposes only. Tarot readings and astrological predictions should NOT be used as a substitute for professional medical, legal, financial, or psychological advice.</p></div>
+      <div class="section"><h2>3. Subscriptions and Payments</h2><p>TarotApp offers paid subscriptions to access premium features:
+
+• Subscriptions are charged to your App Store or Google Play account
+• Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period
+• You can manage and cancel your subscription from your App Store or Google Play account settings
+• No refunds are offered for partial subscription periods</p></div>
+      <div class="section"><h2>4. Acceptable Use</h2><p>By using TarotApp you agree to:
+
+• Not use the app for illegal purposes
+• Not attempt to access, modify, or interfere with the app's systems
+• Not reproduce, distribute, or sell the app's content without permission
+• Not use the app in any way that could damage, disable, or overload our services</p></div>
+      <div class="section"><h2>5. Intellectual Property</h2><p>All content in TarotApp, including designs, text, images, icons, and software, is the property of Qore Studio or its licensors and is protected by copyright laws.
+
+You are granted a limited, non-exclusive, non-transferable license to use the app for personal purposes.</p></div>
+      <div class="section"><h2>6. Limitation of Liability</h2><p>TarotApp is provided "as is", without warranties of any kind. We are not responsible for:
+
+• Decisions made based on tarot readings or horoscopes
+• Loss of device data
+• Service interruptions
+• Indirect or consequential damages
+
+Our maximum liability is limited to the amount paid for your subscription in the last 12 months.</p></div>
+      <div class="section"><h2>7. Modifications</h2><p>We reserve the right to modify or discontinue the app at any time. We may also update these Terms and Conditions. Continued use of the app constitutes acceptance of the updated terms.</p></div>
+      <div class="section"><h2>Contact</h2><p>If you have questions about these terms, contact us at: <a href="mailto:qorestudiosupport@gmail.com" style="color:#c9a84c">qorestudiosupport@gmail.com</a></p></div>
     </div>
 
     <div class="footer">
-      <p>© 2026 Qore Studio · <a href="privacy-policy.html">Política de Privacidad</a></p>
+      <p>© 2026 Qore Studio · <a href="privacy-policy.html" id="footer-privacy">Política de Privacidad</a></p>
     </div>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.toggle('visible', el.dataset.lang === lang);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'es' ? 'español' : 'english'));
+      });
+      const isEs = lang === 'es';
+      document.getElementById('page-title').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
+      document.getElementById('page-updated').textContent = isEs ? 'Última actualización: Abril 2026' : 'Last updated: April 2026';
+      document.getElementById('nav-privacy').textContent = isEs ? 'Privacidad' : 'Privacy';
+      document.getElementById('nav-terms').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
+      document.getElementById('footer-privacy').textContent = isEs ? 'Política de Privacidad' : 'Privacy Policy';
+    }
+  </script>
 </body>
 </html>

@@ -3,105 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidad — TarotApp</title>
+  <title>Privacy Policy / Política de Privacidad — TarotApp</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0a0a0f;
-      color: #e0ddd8;
-      line-height: 1.7;
-      padding: 40px 20px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0ddd8; line-height: 1.7; padding: 40px 20px; }
     .container { max-width: 720px; margin: 0 auto; }
-    .header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #c9a84c30; }
+    .header { text-align: center; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #c9a84c30; }
     .logo { font-size: 32px; margin-bottom: 12px; }
     h1 { font-size: 26px; color: #c9a84c; letter-spacing: 1px; margin-bottom: 8px; }
     .subtitle { font-size: 14px; color: #9b9399; }
     .updated { font-size: 13px; color: #9b9399; margin-top: 8px; }
+    .lang-toggle { display: flex; justify-content: center; gap: 8px; margin-bottom: 28px; }
+    .lang-btn { background: transparent; border: 1px solid #c9a84c40; color: #9b9399; padding: 6px 18px; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+    .lang-btn.active { background: #c9a84c20; border-color: #c9a84c; color: #c9a84c; }
+    .nav { text-align: center; margin-bottom: 32px; }
+    .nav a { color: #c9a84c; text-decoration: none; font-size: 14px; margin: 0 12px; }
+    .nav a:hover { text-decoration: underline; }
     .section { margin-bottom: 36px; }
     h2 { font-size: 16px; color: #c9a84c; letter-spacing: 0.5px; margin-bottom: 12px; text-transform: uppercase; }
     p { font-size: 15px; color: #ccc8c3; white-space: pre-line; }
     .footer { text-align: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid #c9a84c20; font-size: 13px; color: #9b9399; }
     .footer a { color: #c9a84c; text-decoration: none; }
-    .nav { text-align: center; margin-bottom: 32px; }
-    .nav a { color: #c9a84c; text-decoration: none; font-size: 14px; margin: 0 12px; }
-    .nav a:hover { text-decoration: underline; }
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <div class="logo">✦</div>
-      <h1>Política de Privacidad</h1>
+      <h1 id="page-title">Política de Privacidad</h1>
       <p class="subtitle">TarotApp — Qore Studio</p>
-      <p class="updated">Última actualización: Abril 2026</p>
+      <p class="updated" id="page-updated">Última actualización: Abril 2026</p>
+    </div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">Español</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
     </div>
 
     <div class="nav">
-      <a href="privacy-policy.html">Privacidad</a>
-      <a href="terms.html">Términos y Condiciones</a>
+      <a href="privacy-policy.html" id="nav-privacy">Privacidad</a>
+      <a href="terms.html" id="nav-terms">Términos y Condiciones</a>
     </div>
 
-    <div class="section">
-      <h2>1. Información que recopilamos</h2>
-      <p>TarotApp recopila únicamente la información que vos proporcionás voluntariamente durante el proceso de configuración: tu nombre (opcional), fecha de nacimiento, signo zodiacal y preferencias de uso.
+    <!-- ESPAÑOL -->
+    <div data-lang="es" class="visible">
+      <div class="section"><h2>1. Información que recopilamos</h2><p>TarotApp recopila únicamente la información que vos proporcionás voluntariamente durante el proceso de configuración: tu nombre (opcional), fecha de nacimiento, signo zodiacal y preferencias de uso.
 
-No recopilamos información de contacto, correo electrónico ni datos de redes sociales.</p>
-    </div>
+No recopilamos información de contacto, correo electrónico ni datos de redes sociales.</p></div>
+      <div class="section"><h2>2. Cómo usamos tu información</h2><p>Usamos tu fecha de nacimiento para calcular tu signo solar, lunar, ascendente y signo del zodiaco chino. Esta información se usa exclusivamente para personalizar tu experiencia dentro de la app.
 
-    <div class="section">
-      <h2>2. Cómo usamos tu información</h2>
-      <p>Usamos tu fecha de nacimiento para calcular tu signo solar, lunar, ascendente y signo del zodiaco chino. Esta información se usa exclusivamente para personalizar tu experiencia dentro de la app.
+Nunca vendemos, alquilamos ni compartimos tu información personal con terceros con fines publicitarios.</p></div>
+      <div class="section"><h2>3. Almacenamiento de datos</h2><p>Toda tu información personal (nombre, fecha de nacimiento) se almacena de forma cifrada en tu dispositivo usando iOS Keychain y Android EncryptedSharedPreferences.
 
-Nunca vendemos, alquilamos ni compartimos tu información personal con terceros con fines publicitarios.</p>
-    </div>
-
-    <div class="section">
-      <h2>3. Almacenamiento de datos</h2>
-      <p>Toda tu información personal (nombre, fecha de nacimiento) se almacena de forma cifrada en tu dispositivo usando iOS Keychain y Android EncryptedSharedPreferences.
-
-Tu historial de lecturas de tarot se guarda localmente en tu dispositivo y no se transmite a nuestros servidores.</p>
-    </div>
-
-    <div class="section">
-      <h2>4. Servicios de terceros</h2>
-      <p>TarotApp puede utilizar los siguientes servicios de terceros:
+Tu historial de lecturas de tarot se guarda localmente en tu dispositivo y no se transmite a nuestros servidores.</p></div>
+      <div class="section"><h2>4. Servicios de terceros</h2><p>TarotApp puede utilizar los siguientes servicios de terceros:
 
 • RevenueCat: Para gestionar suscripciones. Su política de privacidad aplica a los datos de compra.
-• Apple App Store / Google Play: Para procesar pagos. Sus términos y condiciones aplican.
-
-Estos servicios tienen sus propias políticas de privacidad independientes.</p>
-    </div>
-
-    <div class="section">
-      <h2>5. Tus derechos</h2>
-      <p>Tenés derecho a:
+• Apple App Store / Google Play: Para procesar pagos. Sus términos y condiciones aplican.</p></div>
+      <div class="section"><h2>5. Tus derechos</h2><p>Tenés derecho a:
 
 • Acceder a todos tus datos almacenados en la app
 • Corregir cualquier información incorrecta
 • Eliminar permanentemente todos tus datos (en Ajustes → Eliminar mis datos)
-• Exportar tu historial de lecturas</p>
+• Exportar tu historial de lecturas</p></div>
+      <div class="section"><h2>6. Menores de edad</h2><p>TarotApp no está dirigida a menores de 13 años. No recopilamos intencionalmente información de menores de edad.</p></div>
+      <div class="section"><h2>7. Cambios a esta política</h2><p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos de cambios significativos a través de la app.</p></div>
+      <div class="section"><h2>Contacto</h2><p>Si tenés preguntas, escribinos a: <a href="mailto:qorestudiosupport@gmail.com" style="color:#c9a84c">qorestudiosupport@gmail.com</a></p></div>
     </div>
 
-    <div class="section">
-      <h2>6. Menores de edad</h2>
-      <p>TarotApp no está dirigida a menores de 13 años. No recopilamos intencionalmente información de menores de edad.</p>
-    </div>
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <div class="section"><h2>1. Information We Collect</h2><p>TarotApp only collects information you voluntarily provide during the setup process: your name (optional), date of birth, zodiac sign, and usage preferences.
 
-    <div class="section">
-      <h2>7. Cambios a esta política</h2>
-      <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos de cambios significativos a través de la app. El uso continuado de la app después de los cambios constituye tu aceptación de la nueva política.</p>
-    </div>
+We do not collect contact information, email addresses, or social media data.</p></div>
+      <div class="section"><h2>2. How We Use Your Information</h2><p>We use your date of birth to calculate your sun sign, moon sign, rising sign, and Chinese zodiac sign. This information is used exclusively to personalize your experience within the app.
 
-    <div class="section">
-      <h2>Contacto</h2>
-      <p>Si tenés preguntas sobre esta política de privacidad, escribinos a: <a href="mailto:qorestudiosupport@gmail.com" style="color:#c9a84c">qorestudiosupport@gmail.com</a></p>
+We never sell, rent, or share your personal information with third parties for advertising purposes.</p></div>
+      <div class="section"><h2>3. Data Storage</h2><p>All your personal information (name, date of birth) is stored encrypted on your device using iOS Keychain and Android EncryptedSharedPreferences.
+
+Your tarot reading history is saved locally on your device and is not transmitted to our servers.</p></div>
+      <div class="section"><h2>4. Third-Party Services</h2><p>TarotApp may use the following third-party services:
+
+• RevenueCat: To manage subscriptions. Their privacy policy applies to purchase data.
+• Apple App Store / Google Play: To process payments. Their terms and conditions apply.</p></div>
+      <div class="section"><h2>5. Your Rights</h2><p>You have the right to:
+
+• Access all your data stored in the app
+• Correct any incorrect information
+• Permanently delete all your data (Settings → Delete my data)
+• Export your reading history</p></div>
+      <div class="section"><h2>6. Children's Privacy</h2><p>TarotApp is not directed at children under 13 years of age. We do not knowingly collect information from minors.</p></div>
+      <div class="section"><h2>7. Changes to This Policy</h2><p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the app.</p></div>
+      <div class="section"><h2>Contact</h2><p>If you have questions, contact us at: <a href="mailto:qorestudiosupport@gmail.com" style="color:#c9a84c">qorestudiosupport@gmail.com</a></p></div>
     </div>
 
     <div class="footer">
-      <p>© 2026 Qore Studio · <a href="terms.html">Términos y Condiciones</a></p>
+      <p>© 2026 Qore Studio · <a href="terms.html" id="footer-terms">Términos y Condiciones</a></p>
     </div>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.toggle('visible', el.dataset.lang === lang);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'es' ? 'español' : 'english'));
+      });
+      const isEs = lang === 'es';
+      document.getElementById('page-title').textContent = isEs ? 'Política de Privacidad' : 'Privacy Policy';
+      document.getElementById('page-updated').textContent = isEs ? 'Última actualización: Abril 2026' : 'Last updated: April 2026';
+      document.getElementById('nav-privacy').textContent = isEs ? 'Privacidad' : 'Privacy';
+      document.getElementById('nav-terms').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
+      document.getElementById('footer-terms').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
+      document.getElementById('nav-terms').href = isEs ? 'terms.html' : 'terms.html';
+    }
+  </script>
 </body>
 </html>
