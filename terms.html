@@ -120,6 +120,7 @@ Our maximum liability is limited to the amount paid for your subscription in the
 
   <script>
     function setLang(lang) {
+      localStorage.setItem('lang', lang);
       document.querySelectorAll('[data-lang]').forEach(el => {
         el.classList.toggle('visible', el.dataset.lang === lang);
       });
@@ -133,6 +134,7 @@ Our maximum liability is limited to the amount paid for your subscription in the
       document.getElementById('nav-terms').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
       document.getElementById('footer-privacy').textContent = isEs ? 'Política de Privacidad' : 'Privacy Policy';
     }
+    setLang(localStorage.getItem('lang') || 'es');
   </script>
 </body>
 </html>

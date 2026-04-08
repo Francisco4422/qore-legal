@@ -106,6 +106,7 @@ Your tarot reading history is saved locally on your device and is not transmitte
 
   <script>
     function setLang(lang) {
+      localStorage.setItem('lang', lang);
       document.querySelectorAll('[data-lang]').forEach(el => {
         el.classList.toggle('visible', el.dataset.lang === lang);
       });
@@ -118,8 +119,8 @@ Your tarot reading history is saved locally on your device and is not transmitte
       document.getElementById('nav-privacy').textContent = isEs ? 'Privacidad' : 'Privacy';
       document.getElementById('nav-terms').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
       document.getElementById('footer-terms').textContent = isEs ? 'Términos y Condiciones' : 'Terms & Conditions';
-      document.getElementById('nav-terms').href = isEs ? 'terms.html' : 'terms.html';
     }
+    setLang(localStorage.getItem('lang') || 'es');
   </script>
 </body>
 </html>
